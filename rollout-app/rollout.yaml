@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Rollout
+metadata:
+  name: rollout-app
+  namespace: rollout
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: rollout-app
+  template:
+    metadata:
+      labels:
+        app: rollout-app
+    spec:
+      containers:
+      - image: httpd:2.4.55
+        name: rollout-app
+  strategy:
+    canary:
+      steps:
+      -setWeight: 10
+      -pause: {}
