@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Rollout
 metadata:
   name: rollout-app
-  namespace: rollout
 spec:
   replicas: 10
   selector:
