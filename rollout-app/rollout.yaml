@@ -13,7 +13,7 @@ spec:
         app: rollout-app
     spec:
       containers:
-      - image: httpd:2.4.55
+      - image: httpd:2.4.56
         name: rollout-app
   strategy:
     canary:
